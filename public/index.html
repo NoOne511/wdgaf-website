@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <!--
   WE DON'T GIVE A FUCK — label archive. Single self-contained file.
@@ -23,12 +23,17 @@
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WE DON'T GIVE A FUCK · Estd MMXX</title>
-<meta name="description" content="We Don't Give A Fuck. An independent label established in winter 2020 by two obscure hermits living in the middle of nowhere, Scottish Highlands. Four releases. Resistance is not futile.">
-<meta property="og:title" content="WE DON'T GIVE A FUCK">
+<title>WE DON’T GIVE A FUCK · Estd MMXX</title>
+<meta name="description" content="We Don’t Give A Fuck. An independent label established in winter 2020 by two obscure hermits living in the middle of nowhere, Scottish Highlands. Four releases. Resistance is not futile.">
+<meta property="og:title" content="WE DON’T GIVE A FUCK">
 <meta property="og:description" content="We are everywhere and nowhere. Resistance is not futile.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://wedontgiveafuck.xyz/">
+<meta property="og:url" content="https://wedontgiveafuck.xyz/">
+<meta property="og:image" content="https://wedontgiveafuck.xyz/assets/home.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Cg fill='none' stroke='%23ffd800' stroke-width='3'%3E%3Ccircle cx='32' cy='24' r='12'/%3E%3Ccircle cx='24' cy='38' r='12'/%3E%3Ccircle cx='40' cy='38' r='12'/%3E%3C/g%3E%3C/svg%3E">
 <style>
 @font-face{font-family:"Bodoni Moda";src:url("assets/bodoni-moda.woff2") format("woff2");
   font-weight:400 900;font-display:swap}
@@ -42,7 +47,7 @@
   --bg:#000000;
   --ink:#e8e4d8;
   --dim:#8c8677;
-  --faint:#4a463d;
+  --faint:#57524a;
   --line:#1e1c17;
   --gold:#ffd800;
   --display:"Bodoni Moda","Bodoni MT",Didot,"Times New Roman",serif;
@@ -55,12 +60,15 @@ body{
   background:var(--bg);color:var(--ink);
   font-family:var(--serif);font-size:17px;line-height:1.85;
   -webkit-font-smoothing:antialiased;
+  font-variant-numeric:oldstyle-nums;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
 }
+.meta,.cat,.yr,.sub,.credits,.out,#estd,.sect-head,figcaption,.status{font-variant-numeric:lining-nums}
 ::selection{background:var(--gold);color:#000}
 a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(255,216,0,.28)}
 a:hover{border-bottom-color:var(--gold)}
 a:focus-visible,summary:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 
 .wrap{max-width:760px;margin:0 auto;padding:0 7vw}
 section{padding:14vh 0}
@@ -100,7 +108,8 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 .sect-head b{color:var(--ink);font-weight:400}
 
 /* ---------- manifesto ---------- */
-#manifesto p{margin-bottom:2.2em;text-align:justify;hyphens:auto}
+#manifesto p{margin-bottom:2.2em;text-align:justify;hyphens:auto;max-width:37em;margin-left:auto;margin-right:auto;
+  text-wrap:pretty;-webkit-hyphenate-limit-before:4;-webkit-hyphenate-limit-after:3;hyphenate-limit-chars:8 4 3}
 #manifesto p:first-of-type::first-letter{
   float:left;font-family:var(--display);font-size:4.6em;line-height:.86;padding:.06em .12em 0 0;color:var(--gold);
 }
@@ -115,11 +124,14 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 .entry:first-of-type{border-top:1px solid var(--line)}
 .entry summary{
   list-style:none;cursor:pointer;padding:26px 2px;
-  display:grid;grid-template-columns:7em 1fr auto;gap:1.6em;align-items:baseline;
+  display:grid;grid-template-columns:7em 1fr auto 1.1em;gap:1.6em;align-items:baseline;
 }
+.entry summary::after{content:"+";font-family:var(--mono);font-size:13px;color:var(--faint);text-align:right}
+.entry[open] summary::after{content:"\2212";color:var(--gold)}
+.entry summary:hover::after{color:var(--gold)}
 .entry summary::-webkit-details-marker{display:none}
 .entry .cat{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--dim)}
-.entry .ttl{font-family:var(--display);font-size:clamp(18px,2.6vw,27px);font-weight:700;line-height:1.22;letter-spacing:.005em}
+.entry .ttl{font-family:var(--display);font-size:clamp(18px,2.6vw,27px);font-weight:700;line-height:1.22;letter-spacing:.005em;text-wrap:balance}
 .entry .yr{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--dim)}
 .entry summary:hover .cat{color:var(--gold)}
 .entry summary:hover .ttl{color:#fff}
@@ -127,7 +139,7 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 .entry .body{padding:1vh 2px 44px;display:grid;grid-template-columns:7em 1fr;gap:1.6em}
 .entry .meta{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--dim);
   text-transform:uppercase;line-height:2.1}
-.entry .txt p{margin-bottom:1.3em;color:#cfcabb}
+.entry .txt p{margin-bottom:1.3em;color:#cfcabb;text-wrap:pretty;max-width:37em}
 .entry .txt p:last-child{margin-bottom:0}
 .entry figure{margin:0 0 2.6em;max-width:360px}
 .entry figure img{border:1px solid var(--line)}
@@ -141,30 +153,15 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 .entry .out a{margin-right:2em;color:var(--dim);border-bottom-color:var(--faint)}
 .entry .out a:hover{color:var(--gold);border-bottom-color:var(--gold)}
 @media(max-width:700px){
-  .entry summary{grid-template-columns:1fr auto;grid-template-areas:"cat yr" "ttl ttl";gap:.5em 1em}
+  .entry summary{grid-template-columns:1fr auto 1.1em;grid-template-areas:"cat yr mk" "ttl ttl ttl";gap:.5em 1em}
   .entry .cat{grid-area:cat}.entry .yr{grid-area:yr}.entry .ttl{grid-area:ttl}
+  .entry summary::after{grid-area:mk}
+  #manifesto p{text-align:left}
   .entry .body{grid-template-columns:1fr;gap:1em}
 }
 
-/* ---------- press ---------- */
-#press .row{
-  display:grid;grid-template-columns:1fr auto 5em;gap:1.6em;align-items:baseline;
-  border-bottom:1px solid var(--line);padding:20px 2px;
-}
-#press .row:first-of-type{border-top:1px solid var(--line)}
-#press .pub{font-family:var(--display);font-weight:700;font-size:clamp(16px,2vw,21px);letter-spacing:.01em}
-#press .sub{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--dim);
-  text-transform:uppercase;text-align:right}
-#press .yr{font-family:var(--mono);font-size:11px;color:var(--faint);text-align:right}
-#press .print .pub{color:var(--ink)}
-#press .offline{opacity:.5}
-#press a.row{border-bottom:1px solid var(--line)}
-#press a.row:hover .pub{color:var(--gold)}
-#press a.row:hover .yr{color:var(--gold)}
-@media(max-width:700px){
-  #press .row{grid-template-columns:1fr auto;grid-template-areas:"pub yr" "sub sub";gap:.3em 1em}
-  #press .pub{grid-area:pub}#press .yr{grid-area:yr}#press .sub{grid-area:sub;text-align:left}
-}
+/* ---------- press: catalogue entry structure ---------- */
+#press .txt q{font-style:italic;quotes:"\201C" "\201D"}
 
 /* ---------- signals ---------- */
 #signals a.lnk{
@@ -186,16 +183,25 @@ footer .status{font-family:var(--mono);font-size:10px;letter-spacing:.24em;
 footer .status b{color:var(--ink);font-weight:400}
 footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-spacing:.2em;
   text-transform:uppercase;color:var(--faint);font-size:12px}
+
+@media print{
+  :root{--bg:#fff;--ink:#000;--dim:#444;--faint:#666;--line:#bbb;--gold:#7a6000}
+  body{font-size:11pt;line-height:1.6}
+  #splash,#sigil{display:none}
+  #manifesto p:first-of-type::first-letter{color:#000}
+  a{color:#000;border-bottom:none}
+  .entry summary::after{display:none}
+}
 </style>
 </head>
 <body>
 
 <div id="splash">
-  <img src="assets/home.webp" alt="We Don't Give A Fuck, Estd 2020" onerror="this.parentElement.remove()">
+  <img src="assets/home.webp" alt="We Don’t Give A Fuck, Estd 2020" width="640" height="800" fetchpriority="high" onerror="this.parentElement.remove()">
 </div>
 
 <header id="head">
-  <img id="sigil" src="assets/sigil.webp" alt="WDGAF sigil" onerror="this.remove()">
+  <img id="sigil" src="assets/sigil.webp" alt="WDGAF sigil" width="600" height="600" onerror="this.remove()">
   <p id="estd">Scottish Highlands</p>
   <p id="resistance">Resistance is not futile</p>
 </header>
@@ -204,29 +210,29 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
 
 <section id="manifesto">
   <div class="wrap">
-    <div class="sect-head"><span><b>MANIFESTO</b></span><span>WDGAF</span></div>
+    <div class="sect-head"><span><b>I · MANIFESTO</b></span><span>WDGAF</span></div>
 
-    <p>In an era that is witnessing the End of Times, where Quantity rules over Quality, where Humanity is nothing but a word for charities, where everything is a product and even Music has fallen into the restrictive boundaries of serial production, of "per genre" ossification, of infinite overproduction of cheap and plastic products, where the importance of time and reflection has been erased by the constant overlapping of news and stories that last no more than 24 hours, where you are the producing product who has to continuously produce contents to keep being a "good" product: <span class="strike">we don't give a fuck, we are not a product.</span></p>
+    <p>In an era that is witnessing the End of Times, where Quantity rules over Quality, where Humanity is nothing but a word for charities, where everything is a product and even Music has fallen into the restrictive boundaries of serial production, of “per genre” ossification, of infinite overproduction of cheap and plastic products, where the importance of time and reflection has been erased by the constant overlapping of news and stories that last no more than 24 hours, where you are the producing product who has to continuously produce contents to keep being a “good” product: <span class="strike">we don’t give a fuck, we are not a product.</span></p>
 
     <p>We believe in the absolute domain of Quality over Quantity, we believe in the close relationship between people where cooperation and respect are the main values, we believe that Music in particular, and Art in general, must be freed by market logic, and that works should stand up for their power and originality, not because they fit in some dead and utterly boring rule, which has been set by dreary critics who wrote those rules to generate a discipline over something that was absolutely revolutionary and undisciplined.</p>
 
-    <p>We believe in creative freedom, and we don't give a fuck about genres and categorizations, which generate an infinite reproduction of always the same tunes with no sparks of life. Contemporary music is a continuous museum-like revisitation of 20th century's music, with little or no innovation at all, even in those fields that should be experimental by election.</p>
+    <p>We believe in creative freedom, and we don’t give a fuck about genres and categorizations, which generate an infinite reproduction of always the same tunes with no sparks of life. Contemporary music is a continuous museum-like revisitation of 20th century’s music, with little or no innovation at all, even in those fields that should be experimental by election.</p>
 
     <p>We are not seeking for the coming back of the "good ol' times": we think that we have reached the bottom end of western civilization, which has been indispensable in order to demolish the old guard, the old way of thinking, the old way of being. But now, from the ruins we live in, we shall build a new world, where Aesthetics is not distinct from Ethics, where there is absolute self-responsibility of the artists over their production, where courage, boldness, audacity and rebellion towards any kind of restriction and museum-like nostalgia of the past glories, which sooner or later bring to artistic and cultural abulia, would be essential elements of every form of art.</p>
 
     <p>We want to regain Time, to be able to think and create without haste, being able to be committed to long term works with passion and dedication.</p>
 
-    <p>We are not interested in not offending people, we don't do consolatory and reassuring art. We want you to think about your human condition and the world you live in, we want you to question yourself, we want you to get out of your comfort zone to explore foreign territories and dive into the darkness and irrationality of new sounds.</p>
+    <p>We are not interested in not offending people, we don’t do consolatory and reassuring art. We want you to think about your human condition and the world you live in, we want you to question yourself, we want you to get out of your comfort zone to explore foreign territories and dive into the darkness and irrationality of new sounds.</p>
 
-    <p>We are against massification and standardization, we think that "every man and every woman is a star" and that everyone shall find their true identity, including artistic identity, and their true will, and that no man and no culture are, and shall be, equal to each other, which is a blessing.</p>
+    <p>We are against massification and standardization, we think that “every man and every woman is a star” and that everyone shall find their true identity, including artistic identity, and their true will, and that no man and no culture are, and shall be, equal to each other, which is a blessing.</p>
 
-    <p>Nowadays there are no more sub-cultures or counter-cultures; everything is being absorbed in a flat mainstream which uses the same means and has the same focus: money, or in the "best" scenario, ego showcase. There is no Culture, there is just Aesthetics without Ethics. The deeper meaning is lost, the self-research, the overcome of the ego in search for the higher self thru the means of art, are abandoned. There are no more cultural correspondences, if not to show an artificial intellectualism. What we see are just marketing strategies.</p>
+    <p>Nowadays there are no more sub-cultures or counter-cultures; everything is being absorbed in a flat mainstream which uses the same means and has the same focus: money, or in the “best” scenario, ego showcase. There is no Culture, there is just Aesthetics without Ethics. The deeper meaning is lost, the self-research, the overcome of the ego in search for the higher self thru the means of art, are abandoned. There are no more cultural correspondences, if not to show an artificial intellectualism. What we see are just marketing strategies.</p>
 
     <p>In order to regain the point, the direction, the Futuristic philosophy of the exaltation of speed must be overturned, reversed. We have to join slowness, where time dilation and, hopefully, boredom, can lead us to immerse ourselves in deep thinking, in meditation about art, in calm listening to sound worlds, in detached analysis and criticism towards ourselves and the present world.</p>
 
     <p>Without all this, we are not making Art, we are making <span class="strike">Artertainment</span>.</p>
 
-    <p>We reject the "fifteen minutes fame" ideology, expression of the consumer society, and we'd rather remain in the darkness than sell our souls to the Artertainment establishment.</p>
+    <p>We reject the “fifteen minutes fame” ideology, expression of the consumer society, and we’d rather remain in the darkness than sell our souls to the Artertainment establishment.</p>
 
     <p>We want to be a space for free thinkers, musicians and artists which need absolute freedom of expression, to have the possibility to be heard and to actively form a resistance against the omnipresent flattening mainstream mind.</p>
 
@@ -236,7 +242,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
 
 <section id="releases">
   <div class="wrap">
-    <div class="sect-head"><span><b>RELEASES</b> 2020–2023</span><span>4 RECORDS</span></div>
+    <div class="sect-head"><span><b>II · RELEASES</b> 2020–2023</span><span>4 RECORDS</span></div>
 
     <details class="entry">
       <summary>
@@ -247,7 +253,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
       <div class="body">
         <div class="meta">23.01.2023<br>4th studio album<br>8 tracks</div>
         <div class="txt">
-          <figure><img src="assets/pure-chaos.webp" alt="Pure Chaos cover" loading="lazy" onerror="this.parentElement.remove()"><figcaption>Pure Chaos</figcaption></figure>
+          <figure><img src="assets/pure-chaos.webp" alt="Pure Chaos cover" width="800" height="800" loading="lazy" onerror="this.parentElement.remove()"><figcaption>Pure Chaos</figcaption></figure>
           <p>Composed of released singles, unreleased tracks and works for installations, the fourth Silent Chaos album carries the listener into darkness, with cinematic obscure sounds and sepulchral drums, ancient rituals for this new era, Crowleyan influences and suggestions from the deep space.</p>
           <p>Composition is performative improvisation framed in a pre-decided structure, so the sound appears organised even when unpredictable, with ever-changing textured drones.</p>
           <div class="out"><a href="https://silentchaos.bandcamp.com/album/pure-chaos" target="_blank" rel="noopener">Listen · Bandcamp ↗</a><a href="https://www.youtube.com/watch?v=7b2nyj5B5L4" target="_blank" rel="noopener">Watch · Pure Chaos ↗</a><a href="https://silentchaos.co.uk" target="_blank" rel="noopener">Silent Chaos ↗</a></div>
@@ -264,7 +270,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
       <div class="body">
         <div class="meta">31.10.2020<br>200 copies<br>Limited edition</div>
         <div class="txt">
-          <figure><img src="assets/confinement.webp" alt="Confinement cover" loading="lazy" onerror="this.parentElement.remove()"><figcaption>Confinement</figcaption></figure>
+          <figure><img src="assets/confinement.webp" alt="Confinement cover" width="800" height="800" loading="lazy" onerror="this.parentElement.remove()"><figcaption>Confinement</figcaption></figure>
           <p>After appearing on more than eighty albums under different roles and monikers, Testing Vault, Anatomy, Albireon, Black/Lava, Pariah, the Italian Daniele Santagiuliana chose his birth name to reveal his most personal work.</p>
           <p>Bleak, hostile and cold are the first things that come to mind. Under the surface there are more layers: spoken streams of consciousness, recorded by night during the first three weeks of the Italian lockdown, showing the deep wounds of a person dealing with loss at many levels, while the music offers feeble spotlights where the listener can rest. It is not recommended for the faint-hearted.</p>
           <p>Conceived with a cinematic breath, the record proves the maturity of a fully grown author after years of tribulation and of dealing with his own inner demons.</p>
@@ -283,7 +289,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
       <div class="body">
         <div class="meta">20.03.2020<br>Spring Equinox<br>3rd studio album<br>6 tracks</div>
         <div class="txt">
-          <figure><img src="assets/macro.webp" alt="MACRO cover" loading="lazy" onerror="this.parentElement.remove()"><figcaption>MACRO</figcaption></figure>
+          <figure><img src="assets/macro.webp" alt="MACRO cover" width="800" height="800" loading="lazy" onerror="this.parentElement.remove()"><figcaption>MACRO</figcaption></figure>
           <p>MACRO is the second, long due, part of the project micro//MACRO. The music is the evocation of archetypes buried in the collective unconscious, shown in a new emotional light. Modular synthesizers and electronic drums controlling loops, samples and field recordings offer a wide sound palette from which Silent Chaos draw to define their personal stylistic framework.</p>
           <p>Each composition determines a special universe in which crop up echoes of musique concrète, choirs, tribal sounds, noise and ambient, in sound experiments that envelop and surprise even those not accustomed to listening to these genres.</p>
           <p>Listening to MACRO demands special attention, to immerse deeply in the particular atmosphere of each song; an attention that has been lost in this era of rapid artistic consumption, and against which Silent Chaos are fighting.</p>
@@ -303,7 +309,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
       <div class="body">
         <div class="meta">26.01.2020<br>Death Blues<br>Under the sign<br>of Aquarius<br>[ K-11 ]</div>
         <div class="txt">
-          <figure><img src="assets/rvdra.webp" alt="KVRV! KVRV! KVRV! cover" loading="lazy" onerror="this.parentElement.remove()"><figcaption>KVRV // KVRV // KVRV</figcaption></figure>
+          <figure><img src="assets/rvdra.webp" alt="KVRV! KVRV! KVRV! cover" width="800" height="800" loading="lazy" onerror="this.parentElement.remove()"><figcaption>KVRV // KVRV // KVRV</figcaption></figure>
           <p>The concept standing behind the Death Blues sound of RVDRA is related to the destruction of the limited boundaries of ordered creation of life. Any of the tracks is a mantra for a vortex generating the wave of the void of the life of death.</p>
           <p>Raising the power of nihilistic individualism to exorcise and evoke the primitive force of rage through the most furious Inner Daimon, with the aim of creating a tool of shamanic magic in its most violent ritualistic form, where the present is the future past.</p>
           <p>The Son born from the womb who will generate himself within the essence of the Mother. The Creative Force, Uranus, the Black Dragon, the magnetic force of the planetary conditions poured out into the Nuclear Cosmos of the individual, from whom electricity and primordial water gush into the Cosmos beyond the Self and into the Anticosmos. Generating force of primordial Kaos as a psychoactive condition of the individual. The Vimana of ourselves, where we become sons, as we are energy generators under will. The Inner Daimon, the V.I.T.R.I.O.L, Lapis Niger, Luciferian generator. The end of the rainbow for which nothing is true, everything is permitted.</p>
@@ -319,7 +325,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
 
 <section id="artists">
   <div class="wrap">
-    <div class="sect-head"><span><b>ARTISTS</b></span><span>3</span></div>
+    <div class="sect-head"><span><b>III · ARTISTS</b></span><span>3</span></div>
 
     <details class="entry">
       <summary>
@@ -331,7 +337,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
         <div class="meta">Marta NoOne<br>modular synth,<br>vocals, FX,<br>video<br><br>Ugo Vantini<br>drums, loops,<br>samplers,<br>field recordings</div>
         <div class="txt">
           <p>An experimental audiovisual project founded in Rome in 2016. Their music feeds on non-linear time, on conceptual and performative circularity; ancient and futuristic sounds advance in spirals. Their sound is structured but not predictable, an extemporaneous composition in which improvisation is a form of channelling.</p>
-          <p>Sonorisations for art exhibitions, theatrical and radio performances, and audiovisual work at the Italian contemporary art museum MAAM and across Italy and the United Kingdom. Schizophrenia in Schizophonia at the SERG Sonic Realities conference in Aberdeen; Synbals at King's College Chapel; Permutations at the Kirk of St Nicholas for sonADA inTransit III; Origins at the CCA in Glasgow for Cryptic Nights, then at Listen Again, Radiophrenia and sound festival. In 2019 they were awarded the Alt-w Fund by New Media Scotland and Aberdeen Performing Arts for Human AutomatArt, a generative work driven by sensor data on the Music Hall's LED screen.</p>
+          <p>Sonorisations for art exhibitions, theatrical and radio performances, and audiovisual work at the Italian contemporary art museum MAAM and across Italy and the United Kingdom. Schizophrenia in Schizophonia at the SERG Sonic Realities conference in Aberdeen; Synbals at King’s College Chapel; Permutations at the Kirk of St Nicholas for sonADA inTransit III; Origins at the CCA in Glasgow for Cryptic Nights, then at Listen Again, Radiophrenia and sound festival. In 2019 they were awarded the Alt-w Fund by New Media Scotland and Aberdeen Performing Arts for Human AutomatArt, a generative work driven by sensor data on the Music Hall’s LED screen.</p>
           <div class="out"><a href="https://silentchaos.co.uk" target="_blank" rel="noopener">silentchaos.co.uk ↗</a><a href="https://silentchaos.bandcamp.com/" target="_blank" rel="noopener">Bandcamp ↗</a></div>
         </div>
       </div>
@@ -349,7 +355,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
           <p>RVDRA is the project of the Italian hard trance producer B. R. K., also known as Marko Anzu. Released under the sign of Aquarius, the concept behind the Death Blues sound of RVDRA concerns the destruction of the limited boundaries of the ordered creation of life.</p>
           <p>Through the life of death, and through the death of life.</p>
           <p>We are not human beings but rituals against.</p>
-          <div class="out"><a href="https://rvdra.bandcamp.com/" target="_blank" rel="noopener">Bandcamp ↗</a><a href="https://www.facebook.com/rvdra.lifeofdeath/" target="_blank" rel="noopener">Facebook ↗</a></div>
+          <div class="out"><a href="https://rvdra.bandcamp.com/" target="_blank" rel="noopener">Bandcamp ↗</a><a href="https://open.spotify.com/playlist/0XsK68kw9FEYDOSd5TbG8d" target="_blank" rel="noopener">Playlist · Spotify ↗</a><a href="https://www.facebook.com/rvdra.lifeofdeath/" target="_blank" rel="noopener">Facebook ↗</a></div>
         </div>
       </div>
     </details>
@@ -374,29 +380,87 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
 
 <section id="press">
   <div class="wrap">
-    <div class="sect-head"><span><b>PRESS</b> 2020–2021</span><span>5 NOTICES</span></div>
+    <div class="sect-head"><span><b>IV · PRESS</b> 2020–2021</span><span>5 NOTICES</span></div>
 
-    <div class="row print">
-      <span class="pub">Metal Hammer</span><span class="sub">RVDRA · KVRV! KVRV! KVRV! · print</span><span class="yr">2020</span>
-    </div>
-    <div class="row print">
-      <span class="pub">Rumore 348</span><span class="sub">Confinement · contemporary poetry · IT · print</span><span class="yr">2021</span>
-    </div>
-    <div class="row print">
-      <span class="pub">Rumore 348</span><span class="sub">Some Souls Are Eaten While They All Swim · playlist · print</span><span class="yr">2021</span>
-    </div>
-    <div class="row print">
-      <span class="pub">Blow Up</span><span class="sub">Confinement · spoken words on drones · IT · print</span><span class="yr">2021</span>
-    </div>
-    <a class="row" href="https://fotografierock.it/album/daniele-santagiuliana-recensione-di-confinement" target="_blank" rel="noopener" style="color:inherit;border:0">
-      <span class="pub">Fotografierock</span><span class="sub">Confinement · IT</span><span class="yr">2021 ↗</span>
-    </a>
+    <details class="entry">
+      <summary>
+        <span class="cat">P.05</span>
+        <span class="ttl">Fotografierock</span>
+        <span class="yr">2021</span>
+      </summary>
+      <div class="body">
+        <div class="meta">2021<br>Online<br>Italian<br><br>Review of<br>Confinement</div>
+        <div class="txt">
+          <p>An Italian review of Confinement, still online.</p>
+          <div class="out"><a href="https://fotografierock.it/album/daniele-santagiuliana-recensione-di-confinement" target="_blank" rel="noopener">Read ↗</a></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="cat">P.04</span>
+        <span class="ttl">Blow Up · Spoken Word on Drones</span>
+        <span class="yr">2021</span>
+      </summary>
+      <div class="body">
+        <div class="meta">2021<br>Print<br><br>Review of<br>Confinement<br><br>By Bizarre<br><br>Rated 7</div>
+        <div class="txt">
+          <p>Blow Up filed the record under the heading Spoken Word on Drones. Bizarre hears <q>droni senza battuta, screziati da glitch malefici</q>, a bare recitation touching the horrific, and, in the closing Confined, the hope of a rebirth that saves the album from a pessimism that would be an end in itself.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="cat">P.03</span>
+        <span class="ttl">Rumore 348 · Playlist</span>
+        <span class="yr">2021</span>
+      </summary>
+      <div class="body">
+        <div class="meta">01.2021<br>Issue 348<br>Print + Spotify</div>
+        <div class="txt">
+          <p>Rumore placed Some Souls Are Eaten While They All Swim in the playlist of issue 348, January 2021. The playlist survives on Spotify.</p>
+          <div class="out"><a href="https://open.spotify.com/playlist/3SEI2FmrCly4BJGCm2l3nK" target="_blank" rel="noopener">Listen · Spotify ↗</a></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="cat">P.02</span>
+        <span class="ttl">Rumore 348 · Confini</span>
+        <span class="yr">2021</span>
+      </summary>
+      <div class="body">
+        <div class="meta">01.2021<br>Issue 348<br>Print<br><br>Review of<br>Confinement<br><br>By Antonio<br>Briozzo<br><br>80/100</div>
+        <div class="txt">
+          <p>Antonio Briozzo, in Rumore’s Confini pages, places Santagiuliana’s bare structures and gaunt voice beside Étant Donnés and Michael Gira’s Offenbarung und Untergang, and hears the tension build track by track until it detonates in the closing Confined. His verdict is two words: <q>Poesia contemporanea</q>.</p>
+          <div class="out"><a href="https://rumoremag.com/2021/01/06/rumore-348-gennaio-2021-creem-lester-bangs-golden-age-rock/" target="_blank" rel="noopener">Rumore 348 · contents ↗</a></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="entry">
+      <summary>
+        <span class="cat">P.01</span>
+        <span class="ttl">Metal Hammer</span>
+        <span class="yr">2020</span>
+      </summary>
+      <div class="body">
+        <div class="meta">2020<br>Print<br><br>Review of<br>KVRV! KVRV!<br>KVRV!</div>
+        <div class="txt">
+          <p>KVRV! KVRV! KVRV! was reviewed in Metal Hammer in 2020. Print only.</p>
+        </div>
+      </div>
+    </details>
+
   </div>
 </section>
 
 <section id="signals">
   <div class="wrap">
-    <div class="sect-head"><span><b>SIGNALS</b></span><span>2 CHANNELS</span></div>
+    <div class="sect-head"><span><b>V · SIGNALS</b></span><span>2 CHANNELS</span></div>
     <a class="lnk" href="https://wedontgiveafuck.bandcamp.com/" target="_blank" rel="noopener">Bandcamp <small>RECORDS ↗</small></a>
     <a class="lnk" href="https://www.youtube.com/@wedontgiveafuck/featured" target="_blank" rel="noopener">YouTube <small>VIDEO ↗</small></a>
   </div>
@@ -409,7 +473,7 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
       living in the middle of nowhere, Scottish Highlands<br><br>
       Four records. The label is dormant.
     </p>
-    <p class="mark">We don't give a fuck</p>
+    <p class="mark">We don’t give a fuck</p>
   </div>
 </footer>
 
