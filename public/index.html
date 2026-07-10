@@ -58,7 +58,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   background:var(--bg);color:var(--ink);
-  font-family:var(--serif);font-size:17px;line-height:1.85;
+  font-family:var(--serif);font-size:clamp(16px,0.28vw + 15px,20px);line-height:1.85;
   -webkit-font-smoothing:antialiased;
   font-variant-numeric:oldstyle-nums;
   -webkit-text-size-adjust:100%;text-size-adjust:100%;
@@ -70,7 +70,7 @@ a:hover{border-bottom-color:var(--gold)}
 a:focus-visible,summary:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
 img{display:block;max-width:100%;height:auto}
 
-.wrap{max-width:760px;margin:0 auto;padding:0 7vw}
+.wrap{width:100%;max-width:min(1120px,92vw);margin:0 auto;padding:0 clamp(20px,4vw,64px)}
 section{padding:14vh 0}
 hr{border:0;border-top:1px solid var(--line);margin:0}
 
@@ -81,7 +81,7 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
   padding:6vh 6vw;
 }
 #splash img{
-  max-height:88vh;max-width:min(560px,86vw);width:auto;height:auto;
+  max-height:86vh;max-width:min(620px,84vw);width:auto;height:auto;
 }
 @media(max-width:700px){#splash{padding:4vh 8vw}}
 
@@ -94,7 +94,7 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 }
 #resistance{
   margin-top:9vh;font-family:var(--gothic);font-weight:700;
-  font-size:clamp(19px,3.6vw,34px);letter-spacing:.06em;
+  font-size:clamp(19px,3.2vw,40px);letter-spacing:.06em;
   text-transform:uppercase;color:var(--gold);line-height:1.3;
 }
 
@@ -108,14 +108,14 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 .sect-head b{color:var(--ink);font-weight:400}
 
 /* ---------- manifesto ---------- */
-#manifesto p{margin-bottom:2.2em;text-align:justify;hyphens:auto;max-width:37em;margin-left:auto;margin-right:auto;
+#manifesto p{margin-bottom:2.2em;text-align:justify;hyphens:auto;max-width:68ch;margin-left:auto;margin-right:auto;
   text-wrap:pretty;-webkit-hyphenate-limit-before:4;-webkit-hyphenate-limit-after:3;hyphenate-limit-chars:8 4 3}
 #manifesto p:first-of-type::first-letter{
   float:left;font-family:var(--display);font-size:4.6em;line-height:.86;padding:.06em .12em 0 0;color:var(--gold);
 }
 #manifesto .strike{color:var(--gold);font-weight:700}
 #manifesto .close{
-  margin-top:9vh;text-align:center;font-family:var(--gothic);font-weight:700;text-transform:uppercase;
+  margin-top:9vh;max-width:68ch;margin-left:auto;margin-right:auto;text-align:center;font-family:var(--gothic);font-weight:700;text-transform:uppercase;
   letter-spacing:.16em;color:var(--gold);font-size:clamp(15px,2.2vw,21px);
 }
 
@@ -139,13 +139,13 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 .entry .body{padding:1vh 2px 44px;display:grid;grid-template-columns:7em 1fr;gap:1.6em}
 .entry .meta{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--dim);
   text-transform:uppercase;line-height:2.1}
-.entry .txt p{margin-bottom:1.3em;color:#cfcabb;text-wrap:pretty;max-width:37em}
+.entry .txt p{margin-bottom:1.3em;color:#cfcabb;text-wrap:pretty;max-width:66ch}
 .entry .txt p:last-child{margin-bottom:0}
-.entry figure{margin:0 0 2.6em;max-width:360px}
+.entry figure{margin:0 0 2.6em;max-width:clamp(280px,26vw,440px)}
 .entry figure img{border:1px solid var(--line)}
 .entry figcaption{font-family:var(--mono);font-size:9px;letter-spacing:.16em;
   color:var(--faint);text-transform:uppercase;margin-top:9px}
-.entry .credits{font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+.entry .credits{font-family:var(--mono);font-size:10px;letter-spacing:.08em;max-width:66ch;
   color:var(--faint);text-transform:uppercase;line-height:2;
   border-top:1px solid var(--line);padding-top:1.3em;margin-top:2em}
 .entry .out{margin-top:1.8em;font-family:var(--mono);font-size:11px;
