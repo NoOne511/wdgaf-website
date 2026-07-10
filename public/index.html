@@ -78,7 +78,7 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 #splash{
   min-height:100vh;min-height:100svh;
   display:flex;align-items:center;justify-content:center;
-  padding:6vh 6vw;
+  padding:5vh 6vw 3vh;
 }
 #splash img{
   max-height:86vh;max-width:min(620px,84vw);width:auto;height:auto;
@@ -86,14 +86,14 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 @media(max-width:700px){#splash{padding:4vh 8vw}}
 
 /* ---------- head ---------- */
-#head{padding:10vh 0 10vh;text-align:center}
-#sigil{width:150px;height:150px;margin:0 auto 6vh;opacity:.95}
+#head{padding:4vh 0 11vh;text-align:center}
+#sigil{width:clamp(120px,11vw,168px);height:auto;margin:10vh auto 0;opacity:.95}
 #estd{
-  margin-top:6vh;font-family:var(--mono);font-size:10px;letter-spacing:.4em;
+  font-family:var(--mono);font-size:10px;letter-spacing:.4em;
   color:var(--dim);text-transform:uppercase;
 }
 #resistance{
-  margin-top:9vh;font-family:var(--gothic);font-weight:700;
+  margin-top:7vh;font-family:var(--gothic);font-weight:700;
   font-size:clamp(19px,3.2vw,40px);letter-spacing:.06em;
   text-transform:uppercase;color:var(--gold);line-height:1.3;
 }
@@ -201,9 +201,9 @@ footer .mark{margin-top:5vh;font-family:var(--display);font-weight:700;letter-sp
 </div>
 
 <header id="head">
-  <img id="sigil" src="assets/sigil.webp" alt="WDGAF sigil" width="600" height="600" onerror="this.remove()">
   <p id="estd">Scottish Highlands</p>
   <p id="resistance">Resistance is not futile</p>
+  <img id="sigil" src="assets/sigil.webp" alt="WDGAF sigil" width="600" height="600" onerror="this.remove()">
 </header>
 
 <hr>
